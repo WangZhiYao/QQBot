@@ -1,0 +1,6 @@
+# 指令前缀
+command_prefix: "/"
+# 白名单（空 = 不限制）
+whitelist:
+  groups: []    # 群 openid 列表
+  users: []     # 用户 openid 列表

@@ -1,0 +1,14 @@
+services:
+  qqbot:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:8080"            # QQ 回调允许的端口：80/443/8080/8443
+    env_file: .env             # AppID/Secret 注入容器（.env 不打进镜像）
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8080/healthz')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
