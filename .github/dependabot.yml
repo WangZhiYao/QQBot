@@ -22,15 +22,15 @@ updates:
           - "patch"
 
   # Docker 基础镜像 (Dockerfile)
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "Asia/Shanghai"
-    commit-message:
-      prefix: "chore(deps)"
+  #- package-ecosystem: "docker"
+  #  directory: "/"
+  #  schedule:
+  #    interval: "weekly"
+  #    day: "monday"
+  #    time: "09:00"
+  #    timezone: "Asia/Shanghai"
+  #  commit-message:
+  #    prefix: "chore(deps)"
 
   # GitHub Actions（添加 .github/workflows 后取消注释启用）
   # - package-ecosystem: "github-actions"
