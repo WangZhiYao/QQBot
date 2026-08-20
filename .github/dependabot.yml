@@ -1,0 +1,41 @@
+# Dependabot 版本更新配置
+# 文档：https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Gradle 依赖（根/子模块 build.gradle.kts + gradle/libs.versions.toml 版本目录 + wrapper）
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Shanghai"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      # 补丁与小版本更新合并成一个 PR，减少 PR 噪音；大版本单独提 PR 便于评审
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  # Docker 基础镜像 (Dockerfile)
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Shanghai"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # GitHub Actions（添加 .github/workflows 后取消注释启用）
+  # - package-ecosystem: "github-actions"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   commit-message:
+  #     prefix: "chore(ci)"

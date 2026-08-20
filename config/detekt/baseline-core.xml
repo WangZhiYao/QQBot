@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>FunctionOnlyReturningConstant:SignaturePluginTest.kt$SignaturePluginTest$private fun body(): String</ID>
+    <ID>FunctionOnlyReturningConstant:WebhookRouteTest.kt$WebhookRouteTest$private fun dispatchPayload(): String</ID>
+    <ID>FunctionOnlyReturningConstant:WebhookRouteTest.kt$WebhookRouteTest$private fun validationPayload(): String</ID>
+    <ID>UseCheckOrError:CoroutineBotSchedulerTest.kt$CoroutineBotSchedulerTest$throw IllegalStateException("first run fails")</ID>
+    <ID>WildcardImport:QqBotClientTest.kt$import io.ktor.client.*</ID>
+    <ID>WildcardImport:QqBotClientTest.kt$import io.ktor.client.engine.mock.*</ID>
+    <ID>WildcardImport:QqBotClientTest.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:QqBotClientTest.kt$import io.ktor.http.content.*</ID>
+    <ID>WildcardImport:QqBotPluginTest.kt$import io.ktor.client.request.*</ID>
+    <ID>WildcardImport:SignaturePluginTest.kt$import io.ktor.client.request.*</ID>
+    <ID>WildcardImport:SignaturePluginTest.kt$import io.ktor.client.statement.*</ID>
+    <ID>WildcardImport:SignaturePluginTest.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:SignaturePluginTest.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:SignaturePluginTest.kt$import io.ktor.server.response.*</ID>
+    <ID>WildcardImport:SignaturePluginTest.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:SignaturePluginTest.kt$import io.ktor.server.testing.*</ID>
+    <ID>WildcardImport:TokenManagerTest.kt$import io.ktor.client.*</ID>
+    <ID>WildcardImport:TokenManagerTest.kt$import io.ktor.client.engine.mock.*</ID>
+    <ID>WildcardImport:TokenManagerTest.kt$import io.ktor.client.request.*</ID>
+    <ID>WildcardImport:TokenManagerTest.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:WebhookRouteTest.kt$import io.ktor.client.request.*</ID>
+    <ID>WildcardImport:WebhookRouteTest.kt$import io.ktor.client.statement.*</ID>
+    <ID>WildcardImport:WebhookRouteTest.kt$import io.ktor.http.*</ID>
+    <ID>WildcardImport:WebhookRouteTest.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:WebhookRouteTest.kt$import io.ktor.server.routing.*</ID>
+    <ID>WildcardImport:WebhookRouteTest.kt$import io.ktor.server.testing.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

@@ -1,0 +1,10 @@
+qq:
+  bot:
+    app-id: ${QQ_APP_ID}
+    app-secret: ${QQ_APP_SECRET}
+ktor:
+  deployment:
+    port: 8080
+  application:
+    modules:
+      - cn.floriax.qqbot.sample.MainKt.module

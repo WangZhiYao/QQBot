@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- sample-app 是框架用法演示，Ktor 通配符 import 保持官方示例风格 -->
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>WildcardImport:Main.kt$import io.ktor.server.application.*</ID>
+    <ID>WildcardImport:Main.kt$import io.ktor.server.engine.*</ID>
+    <ID>WildcardImport:Main.kt$import io.ktor.server.netty.*</ID>
+    <ID>WildcardImport:Main.kt$import io.ktor.server.plugins.calllogging.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

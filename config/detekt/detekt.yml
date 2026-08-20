@@ -1,0 +1,25 @@
+# 仅声明与 detekt 默认配置的差异（buildUponDefaultConfig = true），
+# 未列出的规则与阈值全部走默认值。
+
+exceptions:
+  # TokenManager 捕获 Exception 后包装为 TokenFetchException 再抛出，属合理场景
+  TooGenericExceptionCaught:
+    active: false
+  SwallowedException:
+    active: false
+
+naming:
+  # 文件按职责命名（reply.kt、SignaturePlugin.kt）而非与唯一顶层声明同名
+  MatchingDeclarationName:
+    active: false
+
+style:
+  MagicNumber:
+    # QqErrorCode 枚举项的 140+ 错误码、EventDeduplicator 的 LinkedHashMap 初始参数
+    ignorePropertyDeclaration: true
+    ignoreEnums: true
+  MaxLineLength:
+    maxLineLength: 140
+  # 验签/映射等函数以提前 return 表达校验链，逐条提取不划算
+  ReturnCount:
+    active: false
