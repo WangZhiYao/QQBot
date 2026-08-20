@@ -5,7 +5,7 @@ COPY . .
 RUN gradle :sample-app:shadowJar --no-daemon
 
 # 运行层
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:24-jre
 WORKDIR /app
 COPY --from=build /workspace/sample-app/build/libs/*-all.jar app.jar
 RUN mkdir -p /app/data
