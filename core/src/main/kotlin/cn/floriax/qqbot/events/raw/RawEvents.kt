@@ -60,3 +60,17 @@ internal data class RawC2cMessage(
     val timestamp: String? = null,
     val author: RawAuthor? = null,
 )
+
+/**
+ * 机器人加入群聊事件原始结构（GROUP_ADD_ROBOT），1:1 镜射官方 payload 的 d 字段。
+ * op_member_openid 为拉机器人进群的群成员 OpenID。
+ *
+ * @author WangZhiYao
+ * @since 2026/8/21
+ */
+@Serializable
+internal data class RawGroupAddRobot(
+    @SerialName("group_openid") val groupOpenid: String? = null,
+    @SerialName("op_member_openid") val opMemberOpenid: String? = null,
+    val timestamp: Long? = null,
+)

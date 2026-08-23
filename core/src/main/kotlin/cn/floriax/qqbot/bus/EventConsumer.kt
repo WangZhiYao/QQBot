@@ -61,6 +61,7 @@ internal class EventConsumer(
     fun start(scope: CoroutineScope) {
         job = scope.launch {
             for (payload in channel) {
+                logger.info("event received t={} id={}", payload.t, payload.id)
                 val event = EventMapper.map(payload)
                 val handlers = registry.handlersFor(event)
                 if (handlers.isEmpty()) {

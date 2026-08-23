@@ -110,6 +110,39 @@ class EventMapperTest {
     }
 
     @Test
+    fun `group add robot maps to strong type`() {
+        val payload = json.decodeFromString<EventPayload>(
+            """
+            {
+              "id": "ROBOT1.0_gar",
+              "op": 0,
+              "t": "GROUP_ADD_ROBOT",
+              "d": {
+                "group_openid": "group-openid-1",
+                "op_member_openid": "member-openid-9",
+                "timestamp": 1784570534
+              }
+            }
+            """.trimIndent()
+        )
+        val event = assertIs<GroupAddRobot>(EventMapper.map(payload))
+        assertEquals(null, event.rawId, "事件体无 id 字段，rawId 恒 null")
+        assertEquals("group-openid-1", event.groupId)
+        assertEquals("member-openid-9", event.operatorId)
+        assertEquals(1784570534L, event.timestamp)
+    }
+
+    @Test
+    fun `group add robot decode failure falls back to UnknownEvent`() {
+        // 已知 t 但 timestamp 类型不符 → UnknownEvent 兜底
+        val payload = EventPayload(
+            id = "e3", op = 0, t = "GROUP_ADD_ROBOT",
+            d = Json.decodeFromString("""{"group_openid":"g1","timestamp":"not-a-number"}""")
+        )
+        assertIs<UnknownEvent>(EventMapper.map(payload))
+    }
+
+    @Test
     fun `unknown t maps to UnknownEvent`() {
         val payload = json.decodeFromString<EventPayload>(
             """{"id":"e1","op":0,"t":"GUILD_MEMBER_ADD","d":{"user":{"id":"x"}}}"""

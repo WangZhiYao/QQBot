@@ -49,6 +49,21 @@ data class GroupMessage(
 ) : BotEvent
 
 /**
+ * 机器人加入群聊事件（GROUP_ADD_ROBOT）：机器人被拉进群时触发。
+ * [operatorId] 为执行拉群操作的群成员 OpenID。
+ *
+ * @author WangZhiYao
+ * @since 2026/8/21
+ */
+@Serializable
+data class GroupAddRobot(
+    override val rawId: String?,   // 事件体无 id 字段，恒 null
+    val groupId: String,
+    val operatorId: String,
+    val timestamp: Long,
+) : BotEvent
+
+/**
  * 单聊（C2C）消息事件（C2C_MESSAGE_CREATE）。
  *
  * @author WangZhiYao

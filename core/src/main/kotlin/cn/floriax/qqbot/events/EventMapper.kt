@@ -2,6 +2,7 @@ package cn.floriax.qqbot.events
 
 import cn.floriax.qqbot.bus.EventPayload
 import cn.floriax.qqbot.events.raw.RawC2cMessage
+import cn.floriax.qqbot.events.raw.RawGroupAddRobot
 import cn.floriax.qqbot.events.raw.RawGroupAtMessage
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -50,6 +51,16 @@ internal object EventMapper {
                         groupId = raw.groupOpenid.orEmpty(),
                         timestamp = raw.timestamp.orEmpty(),
                         mentionedBot = raw.mentions.any { it.bot == true },
+                    )
+                }
+
+                "GROUP_ADD_ROBOT" -> {
+                    val raw = json.decodeFromJsonElement(RawGroupAddRobot.serializer(), d)
+                    GroupAddRobot(
+                        rawId = null,
+                        groupId = raw.groupOpenid.orEmpty(),
+                        operatorId = raw.opMemberOpenid.orEmpty(),
+                        timestamp = raw.timestamp ?: 0L,
                     )
                 }
 
